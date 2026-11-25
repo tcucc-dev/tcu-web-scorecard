@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>網站成績單｜慈濟大學</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+
+  <p class="demo-banner" id="demo-banner" hidden>原型展示用：本頁所有數字皆為<strong>示意數據</strong>，用來討論版面與用詞，不代表網站的實際表現。</p>
+
+  <header class="top">
+    <div class="top-text">
+      <p class="eyebrow">慈濟大學・網站成績單</p>
+      <h1 id="site-name"></h1>
+      <p class="muted" id="period"></p>
+      <div class="chips">
+        <label class="chip select">
+          <span>網站</span>
+          <select id="site-select" aria-label="選擇網站"></select>
+        </label>
+        <span class="chip">只看校外訪客（已排除校內網路）</span>
+        <span class="chip plain" id="updated"></span>
+      </div>
+    </div>
+
+    <section class="card score" aria-labelledby="score-title">
+      <div class="row-between">
+        <h2 id="score-title" class="card-title">網站健康分數</h2>
+        <span class="status" id="score-status"></span>
+      </div>
+      <p class="score-line"><span class="score-num" id="score-num"></span><span class="score-max">/ 100</span><span class="delta" id="score-delta"></span></p>
+      <p id="score-summary"></p>
+      <div class="parts" id="score-parts"></div>
+    </section>
+  </header>
+
+  <section aria-labelledby="kpi-title">
+    <h2 id="kpi-title">本月四個重點</h2>
+    <div class="kpi-grid" id="kpis"></div>
+  </section>
+
+  <section aria-labelledby="todo-title">
+    <div class="section-head">
+      <h2 id="todo-title">本月要做的 3 件事</h2>
+      <p class="muted">依「影響大、好處理」排序，做完下個月的分數會反映出來</p>
+    </div>
+    <ol class="todos" id="todos"></ol>
+  </section>
+
+  <section class="card" aria-labelledby="trend-title">
+    <div class="section-head between">
+      <h2 id="trend-title">近 12 週校外訪客</h2>
+      <p class="muted">每週不重複訪客數</p>
+    </div>
+    <div class="chart-scroll">
+      <div class="chart" id="trend" role="img"></div>
+      <div class="chart-labels" id="trend-labels"></div>
+    </div>
+    <p class="muted small" id="trend-note"></p>
+  </section>
+
+  <section aria-labelledby="glossary-title">
+    <h2 id="glossary-title" class="h-small">名詞小辭典</h2>
+    <dl class="glossary">
+      <div><dt>校外訪客</dt><dd>從學校網路以外來看網站的人。同一個人一個月來很多次，只算一位。</dd></div>
+      <div><dt>曝光</dt><dd>你的網頁出現在 Google 搜尋結果裡的次數，不管對方有沒有點。</dd></div>
+      <div><dt>點擊率</dt><dd>看到你的網頁後真的點進來的比例。標題和摘要寫得清楚，點擊率就會提高。</dd></div>
+      <div><dt>申請相關行動</dt><dd>點了「線上申請」「簡章下載」「聯絡我們」等按鈕的次數，代表訪客想採取下一步。</dd></div>
+      <div><dt>健康分數</dt><dd>全校網站用同一把尺評分，滿分 100：觸及、搜尋、行動、內容、技術五個面向。</dd></div>
+    </dl>
+  </section>
+
+  <label class="toggle">
+    <input type="checkbox" id="show-sources">
+    <span>顯示資料來源與判斷規則（給技術人員）</span>
+  </label>
+
+  <footer>
+    資料來源：Google Analytics 4、Google Search Console，每日自動更新。有疑問請洽 [負責窗口與聯絡方式]。
+  </footer>
+
+</main>
+<script src="data/sites.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
